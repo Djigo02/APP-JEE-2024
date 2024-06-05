@@ -2,13 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="sn.dev.crudjee.entity.Produit" %>
 <%@ page import="sn.dev.crudjee.dao.IProduitDao" %>
-<%@ page import="sn.dev.crudjee.dao.ProduitImplDao" %><%--
-  Created by IntelliJ IDEA.
-  User: Abdou Fatah Ndiaye
-  Date: 29/05/2024
-  Time: 23:51
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="sn.dev.crudjee.dao.ProduitImplDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     IProduitDao produitDao = new ProduitImplDao();
@@ -16,12 +10,13 @@
 %>
 <html>
 <head>
-    <title>JEE-APP</title>
+    <title>CRUD DJIGO JEE</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
 
 <div class="container mt-5 col-md-5 col-xm-12 col-sm-6 col-md-offset-3">
+    <a href="RedirectServlet.do" class="btn btn-success float-end   ">Ajouter un produit</a>
     <table class="table">
         <thead>
         <tr>
@@ -45,8 +40,8 @@
             <td><%= produit.getPrix() %></td>
             <td><%= produit.getQuantite() %></td>
             <td>
-                <a href="ProduitServlet.do?action=update&id=<%= produit.getId() %>" class="btn btn-outline-secondary">Modifier</a>
-                <a href="ProduitServlet.do?action=delete&id=<%= produit.getId() %>" class="btn btn-outline-danger">Supprimer</a>
+                <a href="ProduitServlet.do?action=update&id=<%= produit.getId() %>" class="btn btn-warning">Modifier</a>
+                <a href="ProduitServlet.do?action=delete&id=<%= produit.getId() %>" class="btn btn-danger">Supprimer</a>
             </td>
         </tr>
         <%
@@ -55,7 +50,7 @@
         %>
         </tbody>
     </table>
-    <a href="RedirectServlet.do" class="btn btn-outline-info">Ajouter un produit</a>
+
 </div>
 </body>
 </html>

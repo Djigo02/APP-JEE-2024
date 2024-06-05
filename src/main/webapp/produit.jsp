@@ -2,13 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="sn.dev.crudjee.entity.Produit" %>
 <%@ page import="sn.dev.crudjee.dao.IProduitDao" %>
-<%@ page import="sn.dev.crudjee.dao.ProduitImplDao" %><%--
-  Created by IntelliJ IDEA.
-  User: Abdou Fatah Ndiaye
-  Date: 29/05/2024
-  Time: 23:51
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="sn.dev.crudjee.dao.ProduitImplDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     IProduitDao produitDao = new ProduitImplDao();
@@ -16,7 +10,7 @@
 %>
 <html>
 <head>
-    <title>JEE-APP</title>
+    <title>CRUD DJIGO JEE</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body >
@@ -45,7 +39,7 @@
                 <br>
                 <div>
                     <button type="submit" class="btn btn-outline-success mx-auto">Ajouter</button>
-                    <a href="http://localhost:8080/crud_jee_war/" class="btn btn-outline-info float-end">Lister les produits</a>
+                    <a href="http://localhost:8080/crud_jee_war/" class="btn btn-info float-end">Lister les produits</a>
                 </div>
             </form>
         </div>

@@ -2,13 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="sn.dev.crudjee.entity.Produit" %>
 <%@ page import="sn.dev.crudjee.dao.IProduitDao" %>
-<%@ page import="sn.dev.crudjee.dao.ProduitImplDao" %><%--
-  Created by IntelliJ IDEA.
-  User: Abdou Fatah Ndiaye
-  Date: 29/05/2024
-  Time: 23:51
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="sn.dev.crudjee.dao.ProduitImplDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% Produit produit = (Produit) request.getAttribute("produit"); %>
 <html>
