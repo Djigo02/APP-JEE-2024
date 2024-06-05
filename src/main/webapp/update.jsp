@@ -24,7 +24,7 @@
             Modification Produit
         </div>
         <div class="card-body">
-            <form action="produit.do" method="post">
+            <form action="update" method="post">
                 <input type="hidden" name="id" value="<%= produit.getId() %>">
                 <div class="form-group">
                     <label class="control-label">Designation </label>

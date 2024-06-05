@@ -1,4 +1,4 @@
-package sn.dev.crudjee;
+package sn.dev.crudjee.dao;
 
 import java.io.*;
 

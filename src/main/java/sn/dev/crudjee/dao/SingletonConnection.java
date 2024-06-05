@@ -16,7 +16,7 @@ public class SingletonConnection {
     private void getConnection()
     {
         String host = "localhost";
-        String database = "crud_db";
+        String database = "jee_db";
         int port = 3306;
         String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
         String user = "root";

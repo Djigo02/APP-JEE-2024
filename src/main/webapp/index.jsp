@@ -16,7 +16,7 @@
 %>
 <html>
 <head>
-    <title>Title</title>
+    <title>JEE-APP</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -29,30 +29,33 @@
             <th scope="col">Designation</th>
             <th scope="col">Prix</th>
             <th scope="col">Quantite</th>
-            <th scope="col">Options</th>
+            <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
         <%
-
+            int num=1;
             for (Produit produit : produits)
             {
         %>
         <tr>
-            <th scope="row"><%= produit.getId() %></th>
+            <th hidden="hidden" scope="row"><%= produit.getId() %></th>
+            <td><%= num %></td>
             <td><%= produit.getDesignation() %></td>
             <td><%= produit.getPrix() %></td>
             <td><%= produit.getQuantite() %></td>
             <td>
-                <a href="ProduitServlet.do?action=update&id=<%= produit.getId() %>" class="btn btn-outline-secondary">Update</a>
-                <a href="ProduitServlet.do?action=delete&id=<%= produit.getId() %>" class="btn btn-outline-danger">Delete</a>
+                <a href="ProduitServlet.do?action=update&id=<%= produit.getId() %>" class="btn btn-outline-secondary">Modifier</a>
+                <a href="ProduitServlet.do?action=delete&id=<%= produit.getId() %>" class="btn btn-outline-danger">Supprimer</a>
             </td>
         </tr>
         <%
+                num++;
             }
         %>
         </tbody>
     </table>
+    <a href="RedirectServlet.do" class="btn btn-outline-info">Ajouter un produit</a>
 </div>
 </body>
 </html>

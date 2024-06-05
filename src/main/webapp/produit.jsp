@@ -16,15 +16,15 @@
 %>
 <html>
 <head>
-    <title>Title</title>
+    <title>JEE-APP</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body >
 
 <div class="container mt-5 col-md-5 col-xm-12 col-sm-6 col-md-offset-3">
     <div class="card">
-        <div class="card-header center">
-            Simulatuion de credit
+        <div class="card-header center text-center">
+            Ajouter un produit
         </div>
         <div class="card-body">
             <form action="ProduitServlet.do" method="post">
@@ -44,44 +44,12 @@
                 </div>
                 <br>
                 <div>
-                    <button type="submit" class="btn btn-outline-success">Ajouter</button>
+                    <button type="submit" class="btn btn-outline-success mx-auto">Ajouter</button>
+                    <a href="http://localhost:8080/crud_jee_war/" class="btn btn-outline-info float-end">Lister les produits</a>
                 </div>
             </form>
         </div>
     </div>
 </div>
-    <div class="container mt-5 col-md-5 col-xm-12 col-sm-6 col-md-offset-3">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Designation</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Quantite</th>
-                <th scope="col">Options</th>
-            </tr>
-            </thead>
-            <tbody>
-            <%
-
-                    for (Produit produit : produits)
-                    {
-            %>
-            <tr>
-                <th scope="row"><%= produit.getId() %></th>
-                <td><%= produit.getDesignation() %></td>
-                <td><%= produit.getPrix() %></td>
-                <td><%= produit.getQuantite() %></td>
-                <td>
-                    <button class="btn btn-outline-secondary">Update</button>
-                    <button class="btn btn-outline-danger">Delete</button>
-                </td>
-            </tr>
-            <%
-                }
-            %>
-            </tbody>
-        </table>
-    </div>
 </body>
 </html>

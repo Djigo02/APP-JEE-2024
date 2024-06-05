@@ -57,43 +57,20 @@ public class ProduitServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        String designation = request.getParameter("designation");
-        Double prix = Double.parseDouble(request.getParameter("prix"));
-        int quantite = Integer.parseInt(request.getParameter("quantite"));
-        int id = Integer.parseInt(request.getParameter("id"));
-        Produit produit = new Produit();
-
-//        if (action != null && action.equals("update")){
-            Produit p = metier.produitById(id);
-            if (p != null)
-            {
-                p.setDesignation(designation);
-                p.setPrix(prix);
-                p.setQuantite(quantite);
-
-                int res= metier.update(p);
-                if (res > 0)
-                {
-                    response.sendRedirect("success.jsp");
-                }else {
-                    response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Le Produit est introuvable !!!");
-                }
-            }else
-            {
-                out.println("Pas de produit trouve !!!");
-            }
-        /*}
-        else
-        {
-            produit.setDesignation(designation);
-            produit.setPrix(prix);
-            produit.setQuantite(quantite);
-
-            metier.save(produit);
-
-            response.sendRedirect("success.jsp");
-        }*/
+    protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+        String designation=req.getParameter("designation");
+        double prix=Double.parseDouble(req.getParameter("prix"));
+        int quantite=Integer.parseInt(req.getParameter("quantite"));
+        Produit mod=new Produit();
+        mod.setDesignation(designation);
+        mod.setPrix(prix);
+        mod.setQuantite(quantite);
+        try {
+            metier.save(mod);
+            System.out.println("save ok");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        req.getRequestDispatcher("index.jsp").forward(req, response);
     }
 }
